@@ -1,5 +1,41 @@
-<!-- Default -->
-<ion-button>Default</ion-button>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Tela 3 - Criar conta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-justify-content-center">
+  <ion-icon name="person-circle-outline"></ion-icon>
+
+  <ion-item class="ion-margin">
+    <ion-label position="floating">Nome completo</ion-label>
+    <ion-input type="name" name="name" id="name"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin">
+    <ion-label position="floating">Seu melhor e-mail</ion-label>
+    <ion-input type="email" name="email" id="email"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin">
+    <ion-label position="floating">Confirme seu e-mail</ion-label>
+    <ion-input type="name" name="name" id="name"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin">
+    <ion-label position="floating"> Senha</ion-label>
+    <ion-input type="password" name="password" id="password"></ion-input>
+  </ion-item>
 
 
-<ion-button expand="block" fill="outline" size="1">Entrar</ion-button>
+   <ion-button color="primary" type="submit">
+    Criar conta
+  </ion-button>
+
+  <ion-text>
+    <p>Já possui uma conta ?<br>
+    <a href="#">Clique aqui.</a></p>
+  </ion-text>
+</ion-content>

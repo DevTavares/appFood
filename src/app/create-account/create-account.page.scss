@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    
+}
+ion-content{
+    text-align: center;
+
+    margin: 6rem;
+}
+ion-icon {
+    height: 10rem;
+    width: 10rem;
+
+    margin-top: 3rem;
+}
+
+
+ion-button {
+    margin: 5px
+}
+
+ion-text p {
+    margin: 7.5rem;
+}
+ion-text a{
+    text-decoration: none;
+
+    color: #01B3EB;
+}
