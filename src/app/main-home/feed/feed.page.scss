@@ -36,6 +36,12 @@ display: block;
 .margemL{
   margin-left: 25px;
 }
+.margemLName{
+  margin-left: 10px;
+}
+.margemR{
+  margin-right: 25px;
+}
 
 .txtCenter {
   ion-text{
@@ -49,4 +55,12 @@ font-size: 150px;
 font-weight: bolder;
 
 }
+
+.icon {
+  display: inline-block;
+  font-size: 35px;
+  color: #ffC977;
+  vertical-align: middle;
+ }
+
 }

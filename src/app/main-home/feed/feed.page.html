@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color = "primary">
+  <ion-toolbar color="secondary">
     <ion-title>
       Feed Receitas
     </ion-title>
@@ -27,148 +27,60 @@
 
   </ion-card>
 
-  <ion-card class="post-card">
+  <ion-card *ngFor="let post of posts" class="post-card">
     <ion-card-header class="ion-no-padding">
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
           <ion-avatar>
-            <img src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg" alt="">
+            <img [src]="'https://randomuser.me/api/portraits/men/'+(post.id)+'.jpg'" alt="">
           </ion-avatar>
         </ion-col>
         <ion-col size="auto">
-          <ion-text color="dark"><strong>Roberto Pereira</strong></ion-text>
+          <ion-text color="dark"><strong>{{post.user}}</strong></ion-text>
         </ion-col>
         <ion-col size="auto" class="mlAuto">
           <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
-            <ion-icon slot="icon-only" name="chevron-forward-circle-outline"></ion-icon>
+            <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
     </ion-card-header>
     <img class="img-medium" src="https://revistabula.com/wp/wp-content/uploads/2019/06/coxinha.jpg" alt="">
-    <ion-card-content>
-      <ion-row>
-          <ion-text color="dark"><strong>Coxinha de Frango</strong></ion-text>
-      </ion-row>
-      <ion-row>
-        <ion-col size="auto">
-          <ion-text color="dark"><strong>30 minutos</strong></ion-text>
-        </ion-col>
-        <ion-col size="auto" class = "mlAuto">
-          <ion-badge color="secondary">
-            <ion-icon name="star"></ion-icon> 4.8
-          </ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
+    <ion-card-content class="ion-no-padding">
 
-  <ion-card class="post-card">
-    <ion-card-header class="ion-no-padding">
-      <ion-row class="ion-align-items-center">
+      <ion-row>
         <ion-col size="auto">
-          <ion-avatar>
-            <img src="https://randomuser.me/api/portraits/women/91.jpg" alt="">
-          </ion-avatar>
+          <ion-button (click)="toggleLike(post)" fill="clear" [color] = "post.liked ? 'danger' : 'dark'" size="small">
+            <ion-icon slot="icon-only" [name] = "post.liked ? 'heart' : 'heart-outline' "></ion-icon>
+          </ion-button>
         </ion-col>
         <ion-col size="auto">
-          <ion-text color="dark"><strong>Ana Da Silva</strong></ion-text>
+          <ion-button (click)="toggleSave(post)" fill="clear" [color] = "post.saved ? 'warning' : 'dark'" size="small">
+            <ion-icon slot="icon-only" [name] = " post.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
+          </ion-button>
         </ion-col>
         <ion-col size="auto" class="mlAuto">
           <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
-            <ion-icon slot="icon-only" name="chevron-forward-circle-outline"></ion-icon>
+            <ion-icon slot="icon-only" name="book-outline"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
-    </ion-card-header>
-    <img class="img-medium" src="https://www.guiasp24h.com.br/wp-content/uploads/2019/07/12-comidas-pastel-da-maria.jpg" alt="">
-    <ion-card-content>
+
       <ion-row>
-          <ion-text color="dark"><strong>Pastel de Carne</strong></ion-text>
-      </ion-row>
-      <ion-row>
-        <ion-col size="auto">
-          <ion-text color="dark"><strong>15 minutos</strong></ion-text>
+        <ion-col size = "auto" class = "margemLName">
+          <ion-icon name="return-down-forward"></ion-icon>
+          <ion-text color="dark"><strong> {{post.postName}}</strong></ion-text>
+        </ion-col>
+        <ion-col size = "auto">
+          <ion-icon name="stopwatch-sharp"></ion-icon>
+          <ion-text color="dark"><strong> {{post.time}} min</strong></ion-text>
         </ion-col>
         <ion-col size="auto" class = "mlAuto">
-          <ion-badge color="secondary">
-            <ion-icon name="star"></ion-icon> 4.5
+          <ion-badge color = "secondary" >
+            <ion-icon name="star"></ion-icon> {{post.star}}
           </ion-badge>
         </ion-col>
       </ion-row>
     </ion-card-content>
   </ion-card>
-
-  <ion-card class="post-card">
-    <ion-card-header class="ion-no-padding">
-      <ion-row class="ion-align-items-center">
-        <ion-col size="auto">
-          <ion-avatar>
-            <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="">
-          </ion-avatar>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-text color="dark"><strong>Silvio Gomez</strong></ion-text>
-        </ion-col>
-        <ion-col size="auto" class="mlAuto">
-          <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
-            <ion-icon slot="icon-only" name="chevron-forward-circle-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-card-header>
-    <img class="img-medium" src="https://comidinhasdochef.com/wp-content/uploads/2020/05/Bolo-de-Chocolate-Cremoso.jpg" alt="">
-    <ion-card-content>
-      <ion-row>
-          <ion-text color="dark"><strong>Bolo de Chocolate</strong></ion-text>
-      </ion-row>
-      <ion-row>
-        <ion-col size="auto">
-          <ion-text color="dark"><strong>20 minutos</strong></ion-text>
-        </ion-col>
-        <ion-col size="auto" class = "mlAuto">
-          <ion-badge color="secondary">
-            <ion-icon name="star"></ion-icon> 4.3
-          </ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card class="post-card">
-    <ion-card-header class="ion-no-padding">
-      <ion-row class="ion-align-items-center">
-        <ion-col size="auto">
-          <ion-avatar>
-            <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="">
-          </ion-avatar>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-text color="dark"><strong>Sabrina Lima</strong></ion-text>
-        </ion-col>
-        <ion-col size="auto" class="mlAuto">
-          <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
-            <ion-icon slot="icon-only" name="chevron-forward-circle-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-card-header>
-    <img class="img-medium" src="https://4.bp.blogspot.com/-9gFQoJ4IlAE/WyLSu9fqNhI/AAAAAAAAND0/3Ab_DDh-CO0e7D3VWiND0MrkFLGt5nT-ACLcBGAs/s1600/strogonoff-de-frango.jpg" alt="">
-    <ion-card-content>
-      <ion-row>
-            <ion-text color="dark"><strong>Strogonoff De Frango</strong></ion-text>
-      </ion-row>
-      <ion-row>
-        <ion-col size="auto">
-          <ion-text color="dark"><strong>90 minutos</strong></ion-text>
-        </ion-col>
-        <ion-col size="auto" class = "mlAuto">
-          <ion-badge color="secondary">
-            <ion-icon name="star"></ion-icon> 4.7
-          </ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-
 </ion-content>

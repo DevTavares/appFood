@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>search</ion-title>
+<ion-header >
+  <ion-toolbar class="ion-margin-top">
+    <ion-searchbar placeholder="Recip Search" inputmode="string" type="string" (ionChange)="onSearchChange($event)"
+      [debounce]="250" showCancelButton="always"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="ion-text-center">
+    <ion-text color = "medium">
+      <p><strong>Mais Pesquisadas Atualmente</strong></p>
+    </ion-text>
+  </div>
 
+  <ion-row class="search-pics ion-margin-top">
+    <ion-col class="ion-no-padding " size="4"
+      *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
+      <img
+        src="https://assets.bonappetit.com/photos/5d39c7cde82b9d0008a5353d/1:1/w_400%2Cc_limit/HLY-Nam-Prik-Horizontal.jpg"
+        alt="">
+    </ion-col>
+
+  </ion-row>
 </ion-content>
