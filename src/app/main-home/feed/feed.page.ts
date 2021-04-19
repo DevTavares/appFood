@@ -37,4 +37,5 @@ export class FeedPage implements OnInit {
   public toggleSave(post) {
     post.saved = !post.saved;
   }
+
 }
