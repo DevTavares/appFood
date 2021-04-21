@@ -1,9 +1,46 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <ion-icon color="dark" slot="start" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row class="ion-text-center profile-header ion-margin ion-align-items-center">
+    <ion-col>
+      <ion-avatar>
+        <img src="https://randomuser.me/api/portraits/men/7.jpg" />
+      </ion-avatar>
+    </ion-col>
+    <ion-col>
+      <strong>12</strong>
+      <p>Receitas</p>
+    </ion-col>
+    <ion-col>
+      <strong>233</strong>
+      <p>Curtidas</p>
+    </ion-col>
+    <ion-col>
+      <strong>4.8</strong>
+      <p>Nota</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-padding-horizontal">
+    <ion-col>
+      <strong>User-Name</strong><br>
+      Especialista em Gastronomia, adoro fazer receitas e compartilhar para o mundo.
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top">
+    <ion-col class="ion-no-padding" size = "4" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]">
+      <img [src] ="'https://picsum.photos/id/'+(50+i)+'/400/400'" alt="">
+    </ion-col>
+  </ion-row>
 
 </ion-content>
