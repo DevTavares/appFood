@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountPage implements OnInit {
 
-  constructor() { }
+  public post(name, email){
+    console.log("Nome do usuario: "+name);
+    console.log("Email do usuario: "+email);
+  }
+  constructor() {
+    
+   }
 
   ngOnInit() {
   }
 
+ 
+  
 }
