@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'feed-daydetails',
     loadChildren: () => import('./feed-daydetails/feed-daydetails.module').then( m => m.FeedDaydetailsPageModule)
+  },
+  {
+    path: 'feed-bolo',
+    loadChildren: () => import('./feed-bolo/feed-bolo.module').then( m => m.FeedBoloPageModule)
   }
 ];
 

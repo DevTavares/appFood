@@ -45,7 +45,7 @@
         </ion-col>
       </ion-row>
     </ion-card-header>
-    <img class="img-medium" src="https://revistabula.com/wp/wp-content/uploads/2019/06/coxinha.jpg" alt="">
+    <img class="img-medium" [src]="(post.img)" alt="">
     <ion-card-content class="ion-no-padding">
 
       <ion-row>
@@ -60,7 +60,7 @@
           </ion-button>
         </ion-col>
         <ion-col size="auto" class="mlAuto">
-          <ion-button [routerLink]="['/main-home','feed','feed-details']" fill="clear" color="dark" size="small">
+          <ion-button [routerLink]="['/main-home','feed', post.caminho]" fill="clear" color="dark" size="small">
             <ion-icon slot="icon-only" name="book-outline"></ion-icon>
           </ion-button>
         </ion-col>
