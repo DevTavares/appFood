@@ -6,47 +6,21 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-text-center">
-    <ion-text color = "medium">
-      <p><strong>Receitas populares</strong></p>
-    </ion-text>
-  </div>
 
+<<<<<<< HEAD
   <ion-row class="search-pics ion-margin-top">
     <ion-col class="ion-no-padding " size="4">
 
       <img
         src="https://assets.bonappetit.com/photos/5ca534485e96521ff23b382b/4:3/w_3600,h_2700,c_limit/chocolate-chip-cookie.jpg"
         alt="">
+=======
+   
+  <ion-row class="ion-margin-top favorite-pics">
+    <ion-col class="ion-no-padding" size = "4" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11]">
+      <img [src] ="'https://assets.bonappetit.com/photos/5d39c7cde82b9d0008a5353d/1:1/w_400%2Cc_limit/HLY-Nam-Prik-Horizontal.jpg'+(22+i)+'/400/400'" alt="">
+>>>>>>> c76c759487da4cece0467644470a26557821705e
     </ion-col>
   </ion-row>
-
-  <ion-row class="search-pics ion-margin-top">
-    <ion-col class="ion-no-padding " size="4"
-      *ngFor="let i of [1]">
-      <img
-        src="https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80"
-        alt="">
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="search-pics ion-margin-top">
-    <ion-col class="ion-no-padding " size="4"
-      *ngFor="let i of [2]">
-      <img
-        src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-        alt="">
-
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="search-pics ion-margin-top">
-    <ion-col class="ion-no-padding " size="4"
-      *ngFor="let i of [4]">
-      <img
-        src="https://assets.bonappetit.com/photos/5d39c7cde82b9d0008a5353d/1:1/w_400%2Cc_limit/HLY-Nam-Prik-Horizontal.jpg"
-        alt="">
-    </ion-col>
-  </ion-row>
-
+  
 </ion-content>

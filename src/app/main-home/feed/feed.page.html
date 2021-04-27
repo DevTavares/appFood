@@ -1,14 +1,15 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>
-      Feed Receitas
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="secondary">
+        <ion-title>
+            Feed Receitas
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
 
+<<<<<<< HEAD
   <ion-card>
     <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6026d97db0c19ba76f2c5c141efd324_L.jpg" />
     <ion-card-header>
@@ -24,9 +25,26 @@
         <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
       </ion-button>
     </ion-row>
+=======
+    <ion-card>
+        <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6026d97db0c19ba76f2c5c141efd324_L.jpg" />
+        <ion-card-header>
+            <ion-card-subtitle>Receita do dia</ion-card-subtitle>
+            <ion-card-title>Bolo Red Velvet</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            O bolo conhecido como Red Velvet é indiscutivelmente o bolo mais conhecido e consumido entre os Americanos e vem ganhando espaço nas confeitarias de todo o Brasil.
+        </ion-card-content>
+        <ion-row class="ion-align-items-center" class="icon-margin">
+            <ion-button routerLink="/main-home/feed/feed-daydetails" fill="clear" color="dark" class="margem-auto">
+                <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+            </ion-button>
+        </ion-row>
+>>>>>>> c76c759487da4cece0467644470a26557821705e
 
-  </ion-card>
+    </ion-card>
 
+<<<<<<< HEAD
   <ion-card *ngFor="let post of posts" class="post-card">
     <ion-card-header class="ion-no-padding">
       <ion-row class="ion-align-items-center">
@@ -47,40 +65,62 @@
     </ion-card-header>
     <img class="img-medium" src="{{post.img}}" alt="">
     <ion-card-content class="ion-no-padding">
+=======
+    <ion-card *ngFor="let post of posts" class="post-card">
+        <ion-card-header class="ion-no-padding">
+            <ion-row class="ion-align-items-center">
+                <ion-col size="auto">
+                    <ion-avatar>
+                        <img [src]="'https://randomuser.me/api/portraits/men/'+(post.id)+'.jpg'" alt="">
+                    </ion-avatar>
+                </ion-col>
+                <ion-col size="auto">
+                    <ion-text color="dark"><strong>{{post.user}}</strong></ion-text>
+                </ion-col>
+                <ion-col size="auto" class="mlAuto">
+                    <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
+                        <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-card-header>
+        <img class="img-medium" [src]="(post.img)" alt="">
+        <ion-card-content class="ion-no-padding">
+>>>>>>> c76c759487da4cece0467644470a26557821705e
 
-      <ion-row>
-        <ion-col size="auto">
-          <ion-button (click)="toggleLike(post)" fill="clear" [color] = "post.liked ? 'danger' : 'dark'" size="small">
-            <ion-icon slot="icon-only" [name] = "post.liked ? 'heart' : 'heart-outline' "></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-button (click)="toggleSave(post)" fill="clear" [color] = "post.saved ? 'warning' : 'dark'" size="small">
-            <ion-icon slot="icon-only" [name] = " post.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="auto" class="mlAuto">
-          <ion-button [routerLink]="['/main-home','feed','feed-details']" fill="clear" color="dark" size="small">
-            <ion-icon slot="icon-only" name="book-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
+            <ion-row>
+                <ion-col size="auto">
+                    <ion-button (click)="toggleLike(post)" fill="clear" [color]="post.liked ? 'danger' : 'dark'" size="small">
+                        <ion-icon slot="icon-only" [name]="post.liked ? 'heart' : 'heart-outline' "></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="auto">
+                    <ion-button (click)="toggleSave(post)" fill="clear" [color]="post.saved ? 'warning' : 'dark'" size="small">
+                        <ion-icon slot="icon-only" [name]=" post.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="auto" class="mlAuto">
+                    <ion-button [routerLink]="['/main-home','feed', post.caminho]" fill="clear" color="dark" size="small">
+                        <ion-icon slot="icon-only" name="book-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
 
-      <ion-row>
-        <ion-col size = "auto" class = "margemLName">
-          <ion-icon name="return-down-forward"></ion-icon>
-          <ion-text color="dark"><strong> {{post.postName}}</strong></ion-text>
-        </ion-col>
-        <ion-col size = "auto">
-          <ion-icon name="stopwatch-sharp"></ion-icon>
-          <ion-text color="dark"><strong> {{post.time}} min</strong></ion-text>
-        </ion-col>
-        <ion-col size="auto" class = "mlAuto">
-          <ion-badge color = "secondary" >
-            <ion-icon name="star"></ion-icon> {{post.star}}
-          </ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
+            <ion-row>
+                <ion-col size="auto" class="margemLName">
+                    <ion-icon name="return-down-forward"></ion-icon>
+                    <ion-text color="dark"><strong> {{post.postName}}</strong></ion-text>
+                </ion-col>
+                <ion-col size="auto">
+                    <ion-icon name="stopwatch-sharp"></ion-icon>
+                    <ion-text color="dark"><strong> {{post.time}} min</strong></ion-text>
+                </ion-col>
+                <ion-col size="auto" class="mlAuto">
+                    <ion-badge color="secondary">
+                        <ion-icon name="star"></ion-icon> {{post.star}}
+                    </ion-badge>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

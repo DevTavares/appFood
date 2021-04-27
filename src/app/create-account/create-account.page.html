@@ -11,17 +11,17 @@
 
   <ion-item class="ion-margin">
     <ion-label position="floating">Nome completo</ion-label>
-    <ion-input type="name" name="name" id="name"></ion-input>
+    <ion-input type="text" [(ngModel)]="name" name="name" id="name"></ion-input>
   </ion-item>
 
   <ion-item class="ion-margin">
     <ion-label position="floating">Seu melhor e-mail</ion-label>
-    <ion-input type="email" name="email" id="email"></ion-input>
+    <ion-input type="email"[(ngModel)]="email" name="email" id="email"></ion-input>
   </ion-item>
 
   <ion-item class="ion-margin">
     <ion-label position="floating">Confirme seu e-mail</ion-label>
-    <ion-input type="name" name="name" id="name"></ion-input>
+    <ion-input type="email_confirmacao" name="email_confirmacao" id="email_confirmacao"></ion-input>
   </ion-item>
 
   <ion-item class="ion-margin">
@@ -30,12 +30,12 @@
   </ion-item>
 
 
-   <ion-button color="primary" type="submit">
+   <ion-button  (click)="post(name, email)" color="primary" type="submit" routerLink = "/main-home/feed">
     Criar conta
   </ion-button>
 
   <ion-text>
     <p>Já possui uma conta ?<br>
-    <a href="#">Clique aqui.</a></p>
+    <a routerLink = "/login" >Clique aqui.</a></p>
   </ion-text>
 </ion-content>
