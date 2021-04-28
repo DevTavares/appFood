@@ -10,59 +10,7 @@
 </ion-header>
 
 <ion-content>
-<<<<<<< HEAD
-  <ion-card *ngIf="user.name != ''; else login">
-    <ion-row class="ion-text-center profile-header ion-margin ion-align-items-center">
-      <ion-col>
-        <ion-avatar>
-          <img src="https://randomuser.me/api/portraits/men/7.jpg" />
-        </ion-avatar>
-      </ion-col>
-      <ion-col>
-        <strong>12</strong>
-        <p>Receitas</p>
-      </ion-col>
-      <ion-col>
-        <strong>233</strong>
-        <p>Curtidas</p>
-      </ion-col>
-      <ion-col>
-        <strong>4.8</strong>
-        <p>Nota</p>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-padding-horizontal">
-      <ion-col>
-        <strong>{{user.name}}</strong><br>
-        {{user.description}}
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-margin-top">
-      <ion-col class="ion-no-padding" size="4" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]">
-        <img [src]="'https://picsum.photos/id/'+(50+i)+'/400/400'" alt="">
-      </ion-col>
-    </ion-row>
-  </ion-card>
 
-
-  <ng-template #login>
-    <ion-card>
-      <ion-row class="ion-align-items-center">
-        <ion-col size = "auto">
-          <ion-text color="medium" class="ion-text-center">
-            <h3><strong> Voce precisa fazer login para visualisar seu perfil. </strong></h3>
-          </ion-text>
-        </ion-col>
-      </ion-row>
-        <ion-row>
-          <ion-button routerLink = "/home" fill="outline" color="primary" size = "small">
-            <ion-icon slot="icon-only" name="person-sharp"></ion-icon>
-          </ion-button>
-        </ion-row>
-    </ion-card>
-  </ng-template>
-</ion-content>
-=======
     <ion-row class="ion-text-center profile-header ion-margin ion-align-items-center">
         <ion-col>
             <ion-avatar>
@@ -85,7 +33,7 @@
 
     <ion-row class="ion-padding-horizontal">
         <ion-col>
-            <strong>User-Name</strong><br> Especialista em Gastronomia, adoro fazer receitas e compartilhar para o mundo.
+            <strong>Leonardo</strong><br> Especialista em Gastronomia, adoro fazer receitas e compartilhar para o mundo.
         </ion-col>
     </ion-row>
 
@@ -96,4 +44,3 @@
     </ion-row>
 
 </ion-content>
->>>>>>> c76c759487da4cece0467644470a26557821705e

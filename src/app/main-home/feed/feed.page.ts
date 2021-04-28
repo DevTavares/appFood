@@ -15,6 +15,7 @@ export class FeedPage implements OnInit {
       time: 90,
       star: 4.3,
       saved : false,
+      caminho: 'feed-details',
       img: 'https://revistabula.com/wp/wp-content/uploads/2019/06/coxinha.jpg',
     },
     {
@@ -25,7 +26,8 @@ export class FeedPage implements OnInit {
       time: 80,
       star: 4.7,
       saved : false,
-      img: 'https://moinhoglobo.com.br/wp-content/uploads/2019/03/08-bolo-chocolate-1024x683.png',
+      caminho: 'feed-bolo',
+      img: 'https://imgs.6sqft.com/wp-content/uploads/2015/07/20211916/Brooklyn-Blackout-Cake.jpg',
     },
     {
       user: 'Matheus Felipe',
@@ -35,6 +37,7 @@ export class FeedPage implements OnInit {
       time: 75,
       star: 4.6,
       saved : false,
+      caminho: 'feed-bolo',
       img: 'https://img.itdg.com.br/tdg/images/recipes/000/031/593/318825/318825_original.jpg?mode=crop&width=710&height=400',
     },
   ];
