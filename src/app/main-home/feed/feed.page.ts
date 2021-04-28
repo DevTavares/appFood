@@ -12,13 +12,7 @@ export class FeedPage implements OnInit {
       id: 55,
       liked: true,
       postName: 'Coxinha de Frango',
-<<<<<<< HEAD
       time: 90,
-=======
-      img: 'https://revistabula.com/wp/wp-content/uploads/2019/06/coxinha.jpg',
-      caminho: 'feed-details',
-      time: 30,
->>>>>>> c76c759487da4cece0467644470a26557821705e
       star: 4.3,
       saved : false,
       img: 'https://revistabula.com/wp/wp-content/uploads/2019/06/coxinha.jpg',
@@ -28,13 +22,7 @@ export class FeedPage implements OnInit {
       id: 80,
       liked: false,
       postName: 'Bolo de Chocolate',
-<<<<<<< HEAD
       time: 80,
-=======
-      img: 'https://imgs.6sqft.com/wp-content/uploads/2015/07/20211916/Brooklyn-Blackout-Cake.jpg',
-      caminho: 'feed-bolo',
-      time: 60,
->>>>>>> c76c759487da4cece0467644470a26557821705e
       star: 4.7,
       saved : false,
       img: 'https://moinhoglobo.com.br/wp-content/uploads/2019/03/08-bolo-chocolate-1024x683.png',
