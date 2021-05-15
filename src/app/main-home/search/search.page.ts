@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import _ from 'lodash';
+
+interface Posts{
+  user: string;
+  id: number;
+  name: string;
+  img: string;
+}
 
 @Component({
   selector: 'app-search',
@@ -8,7 +14,7 @@ import _ from 'lodash';
 })
 export class SearchPage implements OnInit {
   public currentSearch = '';
-  public posts = [
+  public posts: Posts[] = [
     {
       user: 'Roberto Pereira',
       id: 55,
@@ -29,9 +35,15 @@ export class SearchPage implements OnInit {
     },
   ];
 
+  public filteredPosts = this.posts;
+
   constructor() {}
   public updateFilter(){
     console.log('buscando por', this.currentSearch);
+    this.posts = this.filteredPosts.filter(posts => posts.name.toLowerCase().includes(this.currentSearch));
   }
-  ngOnInit() {}
+
+  ngOnInit() {
+  }
+
 }
