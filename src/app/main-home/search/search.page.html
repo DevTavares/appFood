@@ -1,16 +1,21 @@
 <ion-header>
     <ion-toolbar class="ion-margin-top">
-        <ion-searchbar placeholder="Pesquise aqui" inputmode="string" type="string" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+        <ion-searchbar placeholder="Pesquise aqui" [(ngModel)]="currentSearch" (ionChange) = "updateFilter()" showCancelButton="always">
+
+        </ion-searchbar>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
     <ion-row class="search-pics ion-margin-top">
-        <ion-col class="ion-no-padding " size="4" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]">
+      <ion-list>
+        <ion-card *ngFor="let post of posts">
+            <h2><strong>{{post.name}}</strong></h2>
+            <img src="{{post.img}}" alt="">
+        </ion-card>
 
-            <img src="https://assets.bonappetit.com/photos/5ca534485e96521ff23b382b/4:3/w_3600,h_2700,c_limit/chocolate-chip-cookie.jpg" alt="">
-        </ion-col>
+      </ion-list>
     </ion-row>
 
 </ion-content>
