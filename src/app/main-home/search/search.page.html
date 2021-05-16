@@ -7,18 +7,49 @@
 </ion-header>
 
 <ion-content>
+  <div class="ion-text-center">
+    <ion-text color="medium">
+        <p><strong>Pesquise uma receita</strong></p>
+    </ion-text>
+</div>
 
-    <ion-row class="search-pics ion-margin-top">
-      <ion-list>
-        <ion-card *ngFor="let post of posts">
-            <div class="ion-text-center">
-              <h2><strong>{{post.name}}</strong></h2>
-            </div>
-            <img src="{{post.img}}" alt="">
-        </ion-card>
-
-      </ion-list>
-
+<ion-card *ngFor="let post of posts" class="post-card">
+  <ion-card-header class="ion-no-padding">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="auto">
+        <ion-avatar>
+          <img [src]="'https://randomuser.me/api/portraits/men/'+(post.id)+'.jpg'" alt="">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-text color="dark"><strong>{{post.user}}</strong></ion-text>
+      </ion-col>
+      <ion-col size="auto" class="mlAuto">
+        <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
+          <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-col>
     </ion-row>
+  </ion-card-header>
+  <img class="img-medium" src="{{post.img}}" alt="">
+  <ion-card-content class="ion-no-padding">
+
+    <ion-row>
+      <ion-col size="auto" class="margemLName">
+        <ion-icon name="return-down-forward"></ion-icon>
+        <ion-text color="dark"><strong> {{post.postName}}</strong></ion-text>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-icon name="stopwatch-sharp"></ion-icon>
+        <ion-text color="dark"><strong> {{post.time}} min</strong></ion-text>
+      </ion-col>
+      <ion-col size="auto" class="mlAuto">
+        <ion-badge color="secondary">
+          <ion-icon name="star"></ion-icon> {{post.star}}
+        </ion-badge>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
 
 </ion-content>

@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilePage implements OnInit {
   public user =
     {
-      name: '',
-      description: 'Especialista em Gastronomia, adoro fazer receitas e compartilhar para o mundo.',
+      name: 'User123',
+      description: 'Adicione uma Descrição',
     };
 
   constructor() { }

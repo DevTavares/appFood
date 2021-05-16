@@ -6,3 +6,71 @@
     }
   }
 }
+
+.mlAuto{
+  margin-left: auto;
+}
+
+.post-card{
+  ion-avatar{
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.img-medium{
+width: auto;
+height: auto;
+align-items: center;
+margin: auto;
+display: block;
+}
+
+.margem-auto{
+  margin: auto;
+}
+
+.margemL-auto{
+  margin-left: auto;
+}
+
+.img-border{
+  border-radius: 15px;
+}
+
+.margem-up{
+  margin-top: 5px;
+}
+
+.margemL{
+  margin-left: 25px;
+}
+.margemLName{
+  margin-left: 10px;
+}
+.margemR{
+  margin-right: 25px;
+}
+
+.txtCenter {
+  ion-text{
+    display: flex;
+    justify-content: center;
+  }
+
+.txtSize{
+
+font-size: 150px;
+font-weight: bolder;
+
+}
+
+.icon {
+  display: inline-block;
+  font-size: 35px;
+  color: #ffC977;
+  vertical-align: middle;
+ }
+
+
+}
