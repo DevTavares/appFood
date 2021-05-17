@@ -1,3 +1,4 @@
+import { MainProfileService } from './../../services/main-profile.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  public user =
-    {
-      name: 'User123',
-      description: 'Adicione uma Descrição',
-    };
 
-  constructor() { }
+public user = this.MainProfileService.user;
+
+  constructor(private MainProfileService: MainProfileService) { }
 
   ngOnInit() {
   }

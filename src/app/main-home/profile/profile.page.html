@@ -1,4 +1,9 @@
 <ion-header>
+  <ion-buttons>
+<ion-button [routerLink] = "['/main-home/edit-profile', user.id]" class = "mlAuto">
+  <ion-icon slot="end" expand="block" name="person-sharp" color = "dark"></ion-icon>
+</ion-button>
+  </ion-buttons>
     <ion-toolbar>
         <ion-title>Perfil Do Usuario</ion-title>
     </ion-toolbar>
@@ -9,7 +14,7 @@
     <ion-row class="ion-text-center profile-header ion-margin ion-align-items-center">
       <ion-col>
         <ion-avatar>
-          <img src="https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png" />
+          <img src="{{user.foto}}" alt="">
         </ion-avatar>
       </ion-col>
       <ion-col>
@@ -32,8 +37,13 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-margin-top">
-      <ion-col class="ion-no-padding" size="4" *ngFor="let i of [0,1,2]">
-        <img [src]="'https://picsum.photos/id/'+(20+i)+'/400/400'" alt="">
+      <ion-col class="ion-no-padding">
+        <ion-row class="ion-align-items-center">
+          <ion-col size = "4"><img src="{{user.post1}}" alt=""></ion-col>
+          <ion-col size = "4"><img src="{{user.post2}}" alt=""></ion-col>
+          <ion-col size = "4"><img src="{{user.post3}}" alt=""></ion-col>
+
+        </ion-row>
       </ion-col>
     </ion-row>
   </ion-card>
