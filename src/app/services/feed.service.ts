@@ -51,7 +51,8 @@ export class FeedService {
   }
 
   public favoritePosts(){
-
+    this.aux = this.posts.length - 1;
+    console.log('### POSTS', this.posts);
     for (this.aux; this.aux >= 0; -1){
       if (this.posts[this.aux].saved){
         this.postFavorite[this.count] = this.posts[this.aux];
@@ -63,12 +64,15 @@ export class FeedService {
   }
 
   public savePost(id: number){
+    this.aux = this.posts.length - 1;
     for (this.aux; this.aux >= 0; -1){
       if(this.posts[this.aux].id === id){
-        this.posts[this.aux].saved = this.posts[this.aux].saved ? false : true;
+        this.posts[this.aux].saved = this.posts[this.aux].saved ? true : false;
       }
       this.aux = this.aux -1;
     }
+    console.log('### POSTS alterado', this.posts);
+
   }
 
   constructor() { }
