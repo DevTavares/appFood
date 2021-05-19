@@ -19,7 +19,19 @@ const routes: Routes = [
   {
     path: 'feed-bolo',
     loadChildren: () => import('./feed-bolo/feed-bolo.module').then( m => m.FeedBoloPageModule)
-  }
+  },
+  {
+  path: 'feed-pudim',
+    loadChildren: () => import('./feed-pudim/feed-pudim.module').then( m => m.FeedPudimPageModule)
+  },
+  {
+  path: 'feed-tapioca-morango',
+    loadChildren: () => import('./feed-tapioca-morango/feed-tapioca-morango.module').then( m => m.FeedTapiocaMorangoPageModule)
+  },
+  {
+    path: 'feed-feijoada',
+      loadChildren: () => import('./feed-feijoada/feed-feijoada.module').then( m => m.FeedFeijoadaPageModule)
+    }
 ];
 
 @NgModule({
