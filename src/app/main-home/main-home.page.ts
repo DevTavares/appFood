@@ -10,12 +10,6 @@ export class MainHomePage implements OnInit {
 
   constructor() { }
 
-  public atualizaFavoritos(){
-    const favorite = new FavoritePage();
-    favorite.atualizaPagina();
-    
-  }
-
   ngOnInit() {
   }
 

@@ -18,13 +18,12 @@ interface Posts {
   styleUrls: ['./favorite.page.scss'],
 })
 export class FavoritePage implements OnInit {
-  public service = new FeedService();
   public posts = [];
 
   public atualizaPagina(){
-    this.posts = this.service.favoritePosts();
+    this.posts = this.feedService.favoritePosts();
   }
-  constructor() {}
+  constructor(private feedService: FeedService) {}
 
   ngOnInit() {
     this.atualizaPagina();

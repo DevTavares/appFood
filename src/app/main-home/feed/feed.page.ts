@@ -7,10 +7,9 @@ import { FeedService } from 'src/app/services/feed.service';
   styleUrls: ['./feed.page.scss'],
 })
 export class FeedPage implements OnInit {
-  public service = new FeedService();
-  public posts = this.service.allPosts();
+  public posts = this.feedService.allPosts();
 
-  constructor() {}
+  constructor(private feedService: FeedService) {}
 
   ngOnInit() {}
 
@@ -18,7 +17,7 @@ export class FeedPage implements OnInit {
     post.liked = !post.liked;
   }
   public toggleSave(post) {
-    this.service.savePost(post.id);
+    this.feedService.savePost(post.id);
     post.saved = !post.saved;
   }
 
