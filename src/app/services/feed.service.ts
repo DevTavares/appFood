@@ -32,7 +32,7 @@ export class FeedService {
 
 
   public async loadPosts() {
-    const receita = await this.storage.get('posts') as Posts[];
+    const receita = await this.storage.get('post') as Posts[];
     if(receita){
       this.posts.push(...receita);
     }
@@ -43,15 +43,16 @@ export class FeedService {
   }
 
   public favoritePosts(){
+    const postsFavoritos = [];
     this.aux = this.posts.length - 1;
     for (this.aux; this.aux >= 0; -1){
       if (this.posts[this.aux].saved){
-        this.postFavorite[this.count] = this.posts[this.aux];
+        postsFavoritos.push(this.posts[this.aux]);
         this.count = this.count + 1;
       }
       this.aux = this.aux -1;
     }
-    return this.postFavorite;
+    return postsFavoritos;
   }
 
   public savePost(id: number){
@@ -62,6 +63,8 @@ export class FeedService {
       }
       this.aux = this.aux -1;
     }
+    this.storage.remove('post');
+    this.storage.set('post', this.posts);
     console.log('### POSTS alterado', this.posts);
 
   }

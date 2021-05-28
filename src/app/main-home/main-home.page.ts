@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoritePage } from './favorite/favorite.page';
-
 @Component({
   selector: 'app-main-home',
   templateUrl: './main-home.page.html',
@@ -11,6 +9,10 @@ export class MainHomePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public atualizaFavoritos(){
+    
   }
 
 }

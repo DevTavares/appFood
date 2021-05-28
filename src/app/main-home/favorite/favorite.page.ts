@@ -20,12 +20,12 @@ interface Posts {
 export class FavoritePage implements OnInit {
   public posts = [];
 
-  public atualizaPagina(){
+  public atualizaFavoritos(){
     this.posts = this.feedService.favoritePosts();
   }
   constructor(private feedService: FeedService) {}
 
   ngOnInit() {
-    this.atualizaPagina();
+    this.atualizaFavoritos();
   }
 }
