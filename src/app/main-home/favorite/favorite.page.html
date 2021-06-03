@@ -1,13 +1,15 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-title>Favoritos</ion-title>
-    <ion-icon name="refresh" (click)="atualizaFavoritos()"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-button (click)="atualizaFavoritos()">
+        <ion-icon slot="start" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-
     <div class="ion-text-center">
       <ion-text color="medium">
         <p><strong>Suas Receitas Favoritas</strong></p>
@@ -26,7 +28,7 @@
             <ion-text color="dark"><strong>{{post.user}}</strong></ion-text>
           </ion-col>
           <ion-col size="auto" class="mlAuto">
-            <ion-button (click)="onClick()" fill="clear" color="dark" size="small">
+            <ion-button fill="clear" color="dark" size="small">
               <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
             </ion-button>
           </ion-col>
@@ -37,13 +39,9 @@
 
 
         <ion-row>
+
           <ion-col size="auto">
-            <ion-button (click)="toggleLike(post)" fill="clear" [color]="post.liked ? 'danger' : 'dark'" size="small">
-              <ion-icon slot="icon-only" [name]="post.liked ? 'heart' : 'heart-outline' "></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="auto">
-            <ion-button (click)="toggleSave(post)" fill="clear" [color]="post.saved ? 'warning' : 'dark'" size="small">
+            <ion-button fill="clear" [color]="post.saved ? 'warning' : 'dark'" size="small">
               <ion-icon slot="icon-only" [name]=" post.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
             </ion-button>
           </ion-col>

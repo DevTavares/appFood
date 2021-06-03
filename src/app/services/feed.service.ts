@@ -22,8 +22,7 @@ export class FeedService {
     this.loadPosts();
    }
 
-  public posts: Posts[] =[];
-    
+  public posts: Posts[] = [];
 
 
   public aux = this.posts.length - 1;
@@ -33,7 +32,7 @@ export class FeedService {
 
   public async loadPosts() {
     const receita = await this.storage.get('post') as Posts[];
-    if(receita){
+    if (receita){
       this.posts.push(...receita);
     }
   }
@@ -50,18 +49,18 @@ export class FeedService {
         postsFavoritos.push(this.posts[this.aux]);
         this.count = this.count + 1;
       }
-      this.aux = this.aux -1;
+      this.aux = this.aux - 1;
     }
     return postsFavoritos;
   }
 
   public savePost(id: number){
     this.aux = this.posts.length - 1;
-    for (this.aux; this.aux >= 0; -1){
-      if(this.posts[this.aux].id === id){
+    for (this.aux; this.aux >= 0; - 1){
+      if (this.posts[this.aux].id === id){
         this.posts[this.aux].saved = this.posts[this.aux].saved ? true : false;
       }
-      this.aux = this.aux -1;
+      this.aux = this.aux - 1;
     }
     this.storage.remove('post');
     this.storage.set('post', this.posts);

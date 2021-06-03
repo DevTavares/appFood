@@ -2,6 +2,7 @@ import { MainProfileService } from './../../services/main-profile.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
@@ -18,6 +19,5 @@ export class EditProfilePage implements OnInit {
       const id = +route.snapshot.paramMap.get('id');
       this.user = this.mainProfileService.user.id;
     }
-
   ngOnInit() {}
 }

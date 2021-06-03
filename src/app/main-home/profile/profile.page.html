@@ -1,10 +1,21 @@
 <ion-header>
-  <ion-buttons>
-<ion-button [routerLink] = "['/main-home/edit-profile', user.id]" class = "mlAuto">
-  <ion-icon slot="end" expand="block" name="person-sharp" color = "dark"></ion-icon>
-</ion-button>
-  </ion-buttons>
-    <ion-toolbar>
+  <ion-row>
+    <ion-col>
+      <ion-buttons>
+      <ion-button [routerLink] = "['/main-home/edit-profile', user.id]" class = "mrAuto">
+      <ion-icon slot="end" expand="block" name="person-sharp" color = "dark"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col>
+      <ion-buttons>
+        <ion-button (click)="tirarFoto()" class = "mlAuto">
+          <ion-icon slot = "start" expand="block" name="camera-sharp" color = "dark"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+    <ion-toolbar color="secondary">
         <ion-title>Perfil Do Usuario</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -13,8 +24,8 @@
   <ion-card *ngIf="user.name != ''; else login">
     <ion-row class="ion-text-center profile-header ion-margin ion-align-items-center">
       <ion-col>
-        <ion-avatar>
-          <img src="{{user.foto}}" alt="">
+        <ion-avatar *ngIf="image != ''; else userImage">
+          <img [src] ="image" alt="">
         </ion-avatar>
       </ion-col>
       <ion-col>
@@ -64,5 +75,9 @@
           </ion-button>
         </ion-row>
     </ion-card>
+  </ng-template>
+
+  <ng-template #userImage>
+<ion-avatar><img src={{user.foto}} alt=""></ion-avatar>
   </ng-template>
 </ion-content>
