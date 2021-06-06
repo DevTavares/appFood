@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-create-account',
@@ -11,13 +12,22 @@ export class CreateAccountPage implements OnInit {
     console.log("Nome do usuario: "+name);
     console.log("Email do usuario: "+email);
   }
-  constructor() {
-    
+
+  constructor(public alertCtrl: AlertController) {
    }
 
   ngOnInit() {
   }
 
- 
-  
+  async presentAlertMultipleButtons() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Termos e Condições de uso',
+      message: 'Declaro que concordo com os termos e condições de uso do aplicativo.',
+      buttons: ['Cancel', 'Concordo']
+    });
+
+    await alert.present();
+  }
 }

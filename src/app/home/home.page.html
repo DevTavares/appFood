@@ -22,11 +22,11 @@
 
   <div>
     <ion-button routerLink = "/create-account" type="submit" id="buttons" color="dark">
-      Criar conta
+      Cadastrar
     </ion-button>
   </div>
-  <ion-button routerLink = "/main-home/feed" fill = "clear" >
-    Pular
+  <ion-button routerLink = "/main-home/feed" fill = "clear" (click)= presentAlert() >
+    Entrar como convidado
   </ion-button>
 
 </ion-content>

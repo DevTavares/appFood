@@ -34,9 +34,7 @@ const routes: Routes = [
   {
     path: 'feed-feijoada',
     loadChildren: () => import('./main-home/feed/feed-feijoada/feed-feijoada.module').then( m => m.FeedFeijoadaPageModule)
-  },
-
-
+  }
 
 ];
 
