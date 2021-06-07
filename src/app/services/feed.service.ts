@@ -31,7 +31,7 @@ export class FeedService {
 
 
   public async loadPosts() {
-    const receita = await this.storage.get('post') as Posts[];
+    const receita = await this.storage.get('posts') as Posts[];
     if (receita){
       this.posts.push(...receita);
     }
@@ -62,8 +62,8 @@ export class FeedService {
       }
       this.aux = this.aux - 1;
     }
-    this.storage.remove('post');
-    this.storage.set('post', this.posts);
+    this.storage.remove('posts');
+    this.storage.set('posts', this.posts);
     console.log('### POSTS alterado', this.posts);
 
   }
