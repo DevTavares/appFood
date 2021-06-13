@@ -12,7 +12,6 @@ export class MainHomePage implements OnInit {
   }
 
   public atualizaFavoritos(){
-    
   }
 
 }

@@ -28,10 +28,19 @@ const routes: Routes = [
         path: 'edit-profile',
         loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
       },
+      {
+        path: 'feed',
+        loadChildren: () => import('./feed/feed.module').then( m => m.FeedPageModule)
+      },
+      {
+        path: 'receita-dia',
+        loadChildren: () => import('./receita-dia/receita-dia.module').then( m => m.ReceitaDiaPageModule)
+      },
 
     ]
 
   },
+
 
 
 

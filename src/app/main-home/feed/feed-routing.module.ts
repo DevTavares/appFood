@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'feed-feijoada',
       loadChildren: () => import('./feed-feijoada/feed-feijoada.module').then( m => m.FeedFeijoadaPageModule)
-    }
+    },
+
 ];
 
 @NgModule({
