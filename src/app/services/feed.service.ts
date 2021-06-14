@@ -22,7 +22,8 @@ export class FeedService {
     this.loadPosts();
    }
 
-  public posts: Posts[] = [];
+  public posts: Posts[] = [
+  ];
 
 
   public aux = this.posts.length - 1;

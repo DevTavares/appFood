@@ -45,6 +45,16 @@
               <ion-icon slot="icon-only" [name]=" post.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
             </ion-button>
           </ion-col>
+          <ion-col size="auto" class="margem-up">
+            <ion-badge color="secondary">
+              <ion-icon name="star"></ion-icon> {{post.star}}
+            </ion-badge>
+          </ion-col>
+          <ion-col size="auto" class="mlAuto">
+            <ion-button [routerLink]="['/main-home','feed', post.caminho]" fill="clear" color="dark" size="small">
+                <ion-icon slot="icon-only" name="book-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
         </ion-row>
 
         <ion-row>
@@ -55,11 +65,6 @@
           <ion-col size="auto">
             <ion-icon name="stopwatch-sharp"></ion-icon>
             <ion-text color="dark"><strong> {{post.time}} min</strong></ion-text>
-          </ion-col>
-          <ion-col size="auto" class="mlAuto">
-            <ion-badge color="secondary">
-              <ion-icon name="star"></ion-icon> {{post.star}}
-            </ion-badge>
           </ion-col>
         </ion-row>
       </ion-card-content>
